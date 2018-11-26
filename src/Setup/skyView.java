@@ -13,6 +13,7 @@ public class skyView {
             if ((numRows % 2) ==0) {
                 for (int j = 0;j < numCols; j++) {
                     view[i][j] = scanned[k];
+                    k++;
                 }
             }
             else {
@@ -21,5 +22,16 @@ public class skyView {
                 }
             }
         }
+    }
+    public double getAverage(int startRow,int endRow,int startCol, int endCol) {
+        double average = 0;
+        for (int m = startRow;m < endRow;m++) {
+            for (int n = startCol;n < endCol;n++) {
+                average += view[m][n];
+            }
+
+        }
+        average = average/((endRow - startRow)*(endCol - startCol));
+        return average;
     }
 }
