@@ -11,14 +11,17 @@ public class skyView {
         int k = 0;
         for (int i = 0; i <numRows;i++) {
             if ((numRows % 2) ==0) {
+                k =(numRows*i);
                 for (int j = 0;j < numCols; j++) {
                     view[i][j] = scanned[k];
                     k++;
                 }
             }
             else {
+                k = numCols + (numRows*i);
                 for (int j = numCols;j > 0; j--) {
                     view[i][j] = scanned[k];
+                    k--;
                 }
             }
         }
